@@ -14,12 +14,19 @@ class Catalogo:
 
     def addPelicula(self, pelicula):
         self.peliculas.append(pelicula)
+        print(f"Película añadida ({pelicula.titulo})")
 
     def mostrarCatalogo(self):
-        print("-----------------------------------------------------------------------------")
+        print("")
+        print("------------------------PELICULAS EN CATALOGO---------------------------------")
         for pelicula in self.peliculas:
             print(pelicula)
-        print("-----------------------------------------------------------------------------")
+        print("------------------------------------------------------------------------------")
+        print("")
+        
+    def borarPelicula(self, pelicula):
+        self.peliculas.remove(pelicula)
+        print(f"Película borrada ({pelicula.titulo})")
 
 
 pelicula1 = Pelicula("Blade Runner", "Ridle Scott", 1982)
@@ -31,9 +38,13 @@ pelicula5 = Pelicula("El muelle", "Chris Marker", 1962)
 catalogo = Catalogo()
 catalogo.addPelicula(pelicula1)
 catalogo.addPelicula(pelicula2)
+catalogo.mostrarCatalogo()
+
 catalogo.addPelicula(pelicula3)
 catalogo.addPelicula(pelicula4)
 catalogo.addPelicula(pelicula5)
+catalogo.mostrarCatalogo()
 
+catalogo.borarPelicula(pelicula2)
 catalogo.mostrarCatalogo()
 
